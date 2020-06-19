@@ -1,0 +1,36 @@
+@mixin mq-small-up{
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mq-small-only {
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin mq-medium-up {
+    @media only screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin mq-medium-ipad {
+    @media only screen and (width: 1024px) {
+        @content;
+    }
+}
+
+@mixin mq-medium-down {
+    @media only screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin mq-medium-only {
+    @media only screen and (max-width: 1023px) and (min-width: 768px) {
+        @content;
+    }
+}
+
