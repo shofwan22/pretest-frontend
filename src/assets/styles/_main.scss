@@ -7,3 +7,29 @@
     padding: 0;
     font-family: 'Red Hat Text', sans-serif;
 }
+
+.btn {
+    &-privy {
+        background-color: $c-red;
+        color: $c-white;
+        width: 100%;
+        padding: 6px;
+        box-shadow: 0 8px 16px -10px rgba(228,46,44,.8);
+        border-radius: 10px;
+
+        &:hover {
+            background-color: $c-red-hover;
+            color: $c-white;
+        }
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.is-open {
+    display: block;
+}

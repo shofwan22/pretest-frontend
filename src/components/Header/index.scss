@@ -1,0 +1,91 @@
+@import '../../assets/styles/main';
+
+.navbar {
+    height: 4rem;
+
+    &-nav {
+        display: flex;
+
+        @include mq-small-up {
+            flex-direction: row !important;
+        }
+
+        .nav-item {
+            padding: 0 16px 0 16px;
+            display: flex;
+            align-items: center;
+            
+            @include mq-small-only {
+                padding: 0;
+            }
+
+            .form-search {
+                border: 1px solid $c-gray-sec;
+                display: flex;
+                align-items: center;
+                padding: 0 16px 0 16px;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+                border-top-right-radius: 24px;
+                border-bottom-right-radius: 24px;
+
+                @include mq-small-only {
+                    position: absolute;
+                    left: 1rem;
+                    top: 4rem;
+                    width: calc(100% - 2rem);
+                }
+
+                input {
+                    border: none;
+                    padding: 16px 8px 16px 8px;
+                    font-size: 14px;
+                    width: 220px;
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+                .input-group-append {
+                    padding-left: 8px;
+                }
+            }                   
+        }
+
+        .navbar-notif {
+
+            .icon-notif {
+                circle {
+                    color: $c-red;
+                }
+            }     
+
+            @include mq-small-only {
+                position: absolute;
+                left: 60px;
+                top: 50%;
+                bottom: 50%;
+            }
+        }
+
+        .navbar-user {
+            .small {
+                font-size: 11px;
+
+                &:nth-child(2) {
+                    color: $c-gray;
+                }
+            }
+            .ava {
+                .icon-ava {
+                    color: $c-gray;
+                    opacity: .7;
+                    cursor: pointer;
+                }                
+            }
+        }
+    }
+}
+
