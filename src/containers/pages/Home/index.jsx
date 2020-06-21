@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Building32, User32, Purchase32, Settings32, Launch32, Chat32, Group32, CheckmarkOutline32, UserAvatar32, ChevronRight32 } from "@carbon/icons-react";
+import Documents from '../../../components/Documents';
+import { Building32, User32, Purchase32, Settings32, Launch32, Chat32, Group32, CheckmarkOutline32, UserAvatar32, ChevronRight32, Add32} from "@carbon/icons-react";
 import './index.scss';
+import PreviewDoc from '../../../assets/images/preview.png';
 
 class Home extends Component {
     render() {
@@ -106,9 +108,206 @@ class Home extends Component {
                         </div>
                     </div>                    
                 </div>
+                <div className="home-document">
+                    <div className="home-document-header">
+                        <h4 className="home-document-header-title">
+                            Latest Waiting Documents
+                        </h4>
+                        <button className="btn btn-privy btn-privy-block">
+                            Upload Document
+                            <Add32 className="icon" />
+                        </button>
+                    </div>
+                    <div className="home-document-body">
+                    {
+                        dummyDoc.map((data, index) => {
+                            return (
+                                <Documents data={data} key={index} index={index}/>                                
+                            )
+                        })
+                    }                        
+                    </div>
+                </div>
             </div>
         )
     }
 }
+
+const dummyDoc = [
+    {
+        "document_thumbnail": PreviewDoc,
+        "document_title": "Annual Reports - District And More",
+        "owner": {
+            "name": "Chandra Noor Rachman",
+            "privyId": "CH0021"
+        },
+        "recipients": [
+            {
+                "name": "Recipient One",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Two",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Three",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Four",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Five",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Six",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Seven",
+                "privyId": "JK0098"
+            }
+        ]
+    },
+    {
+        "document_thumbnail": PreviewDoc,
+        "document_title": "Annual Reports - District And More",
+        "owner": {
+            "name": "Chandra Noor Rachman",
+            "privyId": "CH0021"
+        },
+        "recipients": [
+            {
+                "name": "Recipient One",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Two",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Three",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Four",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Five",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Six",
+                "privyId": "JK0098"
+            }
+        ]
+    },
+    {
+        "document_thumbnail": PreviewDoc,
+        "document_title": "Annual Reports - District And More",
+        "owner": {
+            "name": "Chandra Noor Rachman",
+            "privyId": "CH0021"
+        },
+        "recipients": [
+            {
+                "name": "Recipient One",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Two",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Three",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Four",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Five",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Six",
+                "privyId": "JK0098"
+            }
+        ]
+    },
+    {
+        "document_thumbnail": PreviewDoc,
+        "document_title": "Annual Reports - District And More",
+        "owner": {
+            "name": "Chandra Noor Rachman",
+            "privyId": "CH0021"
+        },
+        "recipients": [
+            {
+                "name": "Recipient One",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Two",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Three",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Four",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Five",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Six",
+                "privyId": "JK0098"
+            }
+        ]
+    },
+    {
+        "document_thumbnail": PreviewDoc,
+        "document_title": "Annual Reports - District And More",
+        "owner": {
+            "name": "Chandra Noor Rachman",
+            "privyId": "CH0021"
+        },
+        "recipients": [
+            {
+                "name": "Recipient One",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Two",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Three",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Four",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Five",
+                "privyId": "JK0098"
+            },
+            {
+                "name": "Recipient Six",
+                "privyId": "JK0098"
+            }
+        ]
+    }
+]
 
 export default Home;

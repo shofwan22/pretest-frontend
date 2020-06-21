@@ -233,3 +233,52 @@
         }        
     }
 }
+
+.home-document {
+    margin-top: 2rem;
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 4px 0 8px 0;
+        border-bottom: 1px solid $c-gray-sec;
+
+        @include mq-small-only {
+            display: block;
+            text-align: center;
+        }
+
+        &-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .btn {
+            width: 200px;
+
+            @include mq-small-only {
+                width: 100%;
+            }
+        }
+    }
+
+    &-body {
+        padding: 0;
+        margin: 0;
+        -ms-box-orient: horizontal;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        @include mq-medium-ipad {
+            justify-content: center;
+        }        
+    }
+}
