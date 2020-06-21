@@ -39,9 +39,9 @@ const Documents = (props) => {
                                     <div className="list-recip-ava-initial" key={i}>
                                         {initialHandle(rec.name)}
                                         {
-                                            props.data.recipients.length > 6 && i === 5 &&
+                                            props.data.recipients.length > 5 && i === 5 &&
                                             < div className="more-recip">
-                                                + {parseInt(props.data.recipients.length) - parseInt(i + 1)}
+                                                + {parseInt(props.data.recipients.length) - parseInt(i)}
                                             </div>
                                         }
                                     </div>
