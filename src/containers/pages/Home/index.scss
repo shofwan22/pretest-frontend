@@ -10,4 +10,226 @@
             font-size: .8rem;
         }
     }
+
+    &-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mq-medium-down {
+            display: block;
+        }
+
+        &-start {
+            .section-info {
+                display: flex;
+                align-items: center;
+                
+                @include mq-small-only {
+                    justify-content: space-between;
+                }
+
+                &-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 2px 20px 2px 20px;
+                    border: 1px solid $c-gray-sec;
+                    border-top-left-radius: 24px;
+                    border-bottom-left-radius: 24px;
+                    border-top-right-radius: 24px;
+                    border-bottom-right-radius: 24px;
+                    margin-right: 20px;
+
+                    .icon {
+                        margin-right: 6px;
+                    }
+
+                    @include mq-small-only {
+                        padding: 3px 4.8px;
+                        font-size: 10px;
+                        margin-right: 0;
+                    }
+                }                
+            }
+        }
+
+        &-end {
+            .section-button {
+                display: flex;
+                align-items: center;
+
+                @include mq-small-only {
+                    justify-content: space-between;
+
+                    .btn {
+                        font-size: 11px;
+                    }
+                }
+
+                &-settings {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 150px;
+                    font-size: 14px;
+                    color: $c-red;
+                    margin-right: 50px;
+                    cursor: pointer;
+
+                    @include mq-medium-down {
+                        margin-right: 4.5rem;
+                    }
+
+                    @include mq-small-only {
+                        margin-right: 0;
+                        font-size: 11px;
+                    }
+                }                
+            }
+        }
+
+        &-start, &-end {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.home-body {
+    margin-top: 1rem;
+
+    &-card {
+        padding: 0;
+        margin: 0;
+        -ms-box-orient: horizontal;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        @include mq-medium-ipad {
+            justify-content: center;
+        }
+
+        &-item {
+            padding: 8px;
+            width: 220px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: $c-white;
+
+            @include mq-small-only {
+               width: 100%;               
+            }
+
+            .head-card {
+                margin-top: 1rem;
+
+                .icon-card {
+                    padding: 4px 6px;                    
+                    border-radius: 100%;
+                    margin-bottom: 10px;
+
+                    &-launch {
+                        background-color: rgba($color: $c-green, $alpha: .15);
+                    }
+
+                    &-otp {                        
+                        background-color: rgba($color: $c-orange, $alpha: .15);
+                    }
+
+                    &-employee {                        
+                        background-color: rgba($color: $c-blue, $alpha: .15);
+                    }
+
+                    &-verif {                        
+                        background-color: rgba($color: $c-red, $alpha: .15);
+                    }
+
+                    &-enterprise {                        
+                        background-color: rgba($color: $c-yellow, $alpha: .15);
+                    }
+
+                    .icon {
+                        width: 16px;
+
+                        &-launch {                        
+                            color: $c-green;
+                        }
+
+                        &-otp {                        
+                            color: $c-orange;
+                        }
+
+                        &-employee {                        
+                            color: $c-blue ;
+                        }
+
+                        &-verif {                        
+                            color: $c-red;
+                        }
+
+                        &-enterprise {                        
+                            color: $c-yellow;
+                        }
+                    }
+                    
+                }
+
+                .text-card {
+                    font-weight: 600;
+                    font-size: 11px;
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+
+                    &-main {
+                        font-weight: 700;
+                        font-size: 24px;
+
+                        span {
+                            opacity: .3;
+                        }
+                    }
+                }                    
+            }
+
+            .bottom-card {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                font-size: 10px;
+                color: $c-gray;
+
+                span {
+                    font-weight: 500;
+
+                    &:nth-child(2) {
+                        font-weight: 600;
+                    }
+                }
+
+                &-center {
+                    justify-content: center;
+                    align-items: baseline;
+
+                    span {
+                        .icon {
+                            width: 14px;
+                            color: $c-gray-sec;
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                box-shadow: 1px 1px 9px 1px $c-gray;
+            }
+        }        
+    }
 }
