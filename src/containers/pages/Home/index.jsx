@@ -1,10 +1,41 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { handleModal } from '../../../modules';
 import Documents from '../../../components/Documents';
+import Modal from '../../../components/Modal';
 import { Building32, User32, Purchase32, Settings32, Launch32, Chat32, Group32, CheckmarkOutline32, UserAvatar32, ChevronRight32, Add32} from "@carbon/icons-react";
 import './index.scss';
 import PreviewDoc from '../../../assets/images/preview.png';
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputRecip: [
+                {
+                    name: "Input Recipient"
+                }
+            ]
+        }
+
+        this.handleRecip = this.handleRecip.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleRecip = (e) => {
+        e.preventDefault();
+        this.setState({
+            inputRecip: this.state.inputRecip.concat([
+                {
+                    name: "Input Recipient"
+                }
+            ])
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+    }
     render() {
         return (
             <div>
@@ -113,9 +144,9 @@ class Home extends Component {
                         <h4 className="home-document-header-title">
                             Latest Waiting Documents
                         </h4>
-                        <button className="btn btn-privy btn-privy-block">
+                        <button className="btn btn-privy btn-privy-block" onClick={() => { this.props.handleModal(true) }}>
                             Upload Document
-                            <Add32 className="icon" />
+                            <Add32 className="icon"/>
                         </button>
                     </div>
                     <div className="home-document-body">
@@ -128,6 +159,49 @@ class Home extends Component {
                     }                        
                     </div>
                 </div>
+                <Modal>
+                    <div className="form">
+                        <h5 className="text-center">Upload Document</h5>
+                        <form className="form-upload" onSubmit={this.handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="privyId">Privy Id</label>
+                                <input type="text" className="form-control" placeholder="Privy Id" name="privyId"/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="owner">Name Owner</label>
+                                <input type="text" className="form-control" placeholder="Name Owner" name="name"/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="document_title">Document Title</label>
+                                <input type="text" className="form-control" placeholder="Document Title" name="document_title" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="document_file">Document File</label>
+                                <input type="file" className="form-control" name="document_file" />
+                            </div>
+                            {
+                                this.state.inputRecip.map((r, i) => {
+                                    return (
+                                        <div key={i}>
+                                            <div className="form-group">
+                                                <label htmlFor="recipient_name">Recipient Name</label>
+                                                <input type="text" className="form-control" placeholder="Recipient Name" name="recipient_name[]" />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="recipient_id">Recipient id</label>
+                                                <input type="text" className="form-control" placeholder="Recipient Id" name="recipient_id[]" />
+                                            </div>
+                                        </div>                                        
+                                    )
+                                })
+                            }
+                            <div className="form-group">
+                                <button className="btn btn-primary btn-block" onClick={this.handleRecip}>Add Recipient</button>
+                            </div>
+                            <button className="btn btn-danger btn-block">Submit</button>
+                        </form>
+                    </div>
+                </Modal>
             </div>
         )
     }
@@ -310,4 +384,8 @@ const dummyDoc = [
     }
 ]
 
-export default Home;
+const mapDispatchToProps = {
+    handleModal
+}
+
+export default connect(null, mapDispatchToProps)(Home);

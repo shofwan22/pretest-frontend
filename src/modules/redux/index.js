@@ -11,3 +11,4 @@ export const store = createStore(
 )
 
 export * from './sidebar/action';
+export * from './modal/action';
